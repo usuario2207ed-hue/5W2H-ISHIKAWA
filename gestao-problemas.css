@@ -1,0 +1,170 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1000px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Menu de Navegação */
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.nav-btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    border-radius: 8px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+.nav-btn.active {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Painéis de Ferramentas */
+.tool-panel {
+    display: none;
+}
+.tool-panel.active {
+    display: block;
+}
+
+h2 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulários e Inputs */
+.form-section {
+    margin-bottom: 20px;
+}
+.form-section label, .table-header {
+    font-weight: bold;
+    color: #555;
+}
+input[type="text"], input[type="date"], input[type="number"], textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.status-msg {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #28a745;
+    text-align: center;
+}
+
+/* Ishikawa */
+.ishikawa-factors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+.factor-column {
+    flex-basis: calc(33.33% - 20px);
+    text-align: left;
+}
+.factor-column h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+.factor-input {
+    min-height: 100px;
+}
+
+/* 5W2H */
+.table-5w2h {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 15px;
+    align-items: center;
+}
+.table-header {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Pareto */
+.pareto-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.pareto-item input { flex: 1; }
+.pareto-item .problema { flex: 3; }
+.pareto-item .frequencia { flex: 1; }
+.pareto-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#add-pareto-item {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+#generate-pareto, #save-ishikawa, #save-5w2h {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: auto;
+}
+.chart-container {
+    margin-top: 30px;
+    height: 400px;
+}
+.pareto-analysis {
+    text-align: left;
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão de Problemas - 5W2H</title>
+    <link rel="stylesheet" href="gestao-problemas.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>Sistema de Gestão de Problemas</h1>
+
+        <div class="nav-menu">
+            <button class="nav-btn active" data-tool="analise">Análise do Problema</button>
+            <button class="nav-btn" data-tool="plano-de-acao">Plano de Ação (5W2H)</button>
+            <button class="nav-btn" data-tool="relatorio">Relatórios e Análise</button>
+        </div>
+
+        <div class="tool-panel active" id="analise">
+            <h2>Análise da Causa-Raiz (Ishikawa)</h2>
+            <div class="form-section">
+                <label for="problema-ishikawa">Problema a ser analisado:</label>
+                <input type="text" id="problema-ishikawa" placeholder="Ex: Atraso na entrega do produto final">
+            </div>
+            
+            <div class="ishikawa-factors">
+                <div class="factor-column">
+                    <h3>Pessoas</h3>
+                    <textarea class="factor-input" data-factor="Pessoas" placeholder="Falta de treinamento, sobrecarga..."></textarea>
+                </div>
+                <div class="factor-column">
+                    <h3>Processos</h3>
+                    <textarea class="factor-input" data-factor="Processos" placeholder="Fluxo de trabalho ineficiente, falta de padrão..."></textarea>
+                </div>
+                <div class="factor-column">
+                    <h3>Máquinas</h3>
+                    <textarea class="factor-input" data-factor="Máquinas" placeholder="Equipamento obsoleto, falhas de manutenção..."></textarea>
+                </div>
+                <div class="factor-column">
+                    <h3>Métodos</h3>
+                    <textarea class="factor-input" data-factor="Métodos" placeholder="Procedimentos operacionais desatualizados..."></textarea>
+                </div>
+                <div class="factor-column">
+                    <h3>Medição</h3>
+                    <textarea class="factor-input" data-factor="Medição" placeholder="Instrumentos descalibrados, dados incorretos..."></textarea>
+                </div>
+                <div class="factor-column">
+                    <h3>Meio Ambiente</h3>
+                    <textarea class="factor-input" data-factor="Meio Ambiente" placeholder="Condições de iluminação, temperatura..."></textarea>
+                </div>
+            </div>
+            <button id="save-ishikawa">Salvar Análise</button>
+            <p id="ishikawa-status" class="status-msg"></p>
+        </div>
+
+        <div class="tool-panel" id="plano-de-acao">
+            <h2>Plano de Ação (5W2H)</h2>
+            <div class="form-section">
+                <label for="plano-problema">Problema:</label>
+                <input type="text" id="plano-problema" placeholder="Problema relacionado à análise de causa-raiz.">
+            </div>
+
+            <div class="table-5w2h">
+                <div class="table-header">O quê? (What)</div>
+                <input type="text" id="5w2h-what" placeholder="O que será feito?">
+                
+                <div class="table-header">Por quê? (Why)</div>
+                <input type="text" id="5w2h-why" placeholder="Por que será feito?">
+                
+                <div class="table-header">Onde? (Where)</div>
+                <input type="text" id="5w2h-where" placeholder="Onde será feito?">
+                
+                <div class="table-header">Quem? (Who)</div>
+                <input type="text" id="5w2h-who" placeholder="Quem será o responsável?">
+                
+                <div class="table-header">Quando? (When)</div>
+                <input type="date" id="5w2h-when">
+                
+                <div class="table-header">Como? (How)</div>
+                <input type="text" id="5w2h-how" placeholder="Como será feito?">
+                
+                <div class="table-header">Quanto Custa? (How much)</div>
+                <input type="number" id="5w2h-how-much" placeholder="Custo estimado">
+            </div>
+            <button id="save-5w2h">Salvar Plano de Ação</button>
+            <p id="plano-status" class="status-msg"></p>
+        </div>
+
+        <div class="tool-panel" id="relatorio">
+            <h2>Análise de Frequência (Pareto)</h2>
+            <div class="form-section">
+                <p>Insira os problemas e sua frequência de ocorrência para priorizar as ações.</p>
+                <div id="pareto-inputs-container">
+                    <div class="pareto-item">
+                        <input type="text" class="problema" placeholder="Problema">
+                        <input type="number" class="frequencia" placeholder="Frequência" min="1">
+                        <button class="remove-item">X</button>
+                    </div>
+                </div>
+                <button id="add-pareto-item">+ Adicionar Item</button>
+            </div>
+            <button id="generate-pareto">Gerar Gráfico e Análise</button>
+            
+            <div class="chart-container">
+                <canvas id="pareto-chart"></canvas>
+            </div>
+            
+            <div class="pareto-analysis">
+                <h3>Análise dos Problemas</h3>
+                <p id="pareto-output"></p>
+            </div>
+
+    <!-- Adiciona o rodapé aqui, após o container principal -->
+    <footer class="main-footer">
+        <p>Desenvolvido Por: EDCELL-TECH</p>
+    </footer>
+
+        </div>
+
+    </div>
+
+    <script src="gestao-problemas.js"></script>
+</body>
+</html>
